@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +6,8 @@ namespace CodeBase.Controllers
 {
     public class ViewController : MonoBehaviour
     {
+        private const string TargetScene = "Gallery";
+
         [SerializeField] private RawImage _image;
 
         private ImageSession _session;
@@ -20,7 +20,7 @@ namespace CodeBase.Controllers
 
         public void BackToGallary()
         {
-            SceneManager.LoadScene("Gallary");
+            SceneManager.LoadScene(TargetScene);
         }
     }
 }

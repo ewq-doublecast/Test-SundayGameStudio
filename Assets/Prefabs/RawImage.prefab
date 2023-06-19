@@ -33,7 +33,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -87,8 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53187b287c4519d45ac3aff5cf2411c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectedImage: {fileID: 0}
-  Session: {fileID: 0}
+  _selectedImage: {fileID: 3389842205904115767}
 --- !u!114 &2125526328733444583
 MonoBehaviour:
   m_ObjectHideFlags: 0

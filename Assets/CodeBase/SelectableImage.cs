@@ -1,23 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SelectableImage : MonoBehaviour
+namespace CodeBase
 {
-    public RawImage SelectedImage;
-    private ImageSession _session;
-
-    private void Start()
+    public class SelectableImage : MonoBehaviour
     {
-        SelectedImage = GetComponent<RawImage>();
-        _session = FindObjectOfType<ImageSession>();
-    }
+        private const string SceneName = "View";
 
-    public void SelectImage()
-    {
-        _session.Image = SelectedImage;
-        SceneManager.LoadScene("View");
+        private RawImage _selectedImage;
+        private ImageSession _session;
+
+        private void Awake()
+        {
+            _selectedImage = GetComponent<RawImage>();
+            _session = FindObjectOfType<ImageSession>();
+        }
+
+        public void SelectImage()
+        {
+            _session.Image = _selectedImage;
+            SceneManager.LoadScene(SceneName);
+        }
+
+        public void SetTexture(Texture2D texture)
+        {
+            _selectedImage.texture = texture;
+        }
     }
 }

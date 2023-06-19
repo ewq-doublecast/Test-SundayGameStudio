@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,9 +6,10 @@ using UnityEngine.UI;
 
 public class LoadSceneController : MonoBehaviour
 {
+    private const string TargetScene = "Gallery";
+
     [SerializeField] private Slider _progressBar;
     [SerializeField] private TMP_Text _progressText;
-    [SerializeField] private string _targetScene;
     [SerializeField] private float _loadingTime = 2f;
 
     private void Start()
@@ -31,6 +31,6 @@ public class LoadSceneController : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(_targetScene);
+        SceneManager.LoadScene(TargetScene);
     }
 }
